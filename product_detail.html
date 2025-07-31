@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Comfort T-Shirt - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <!-- NEW: Wishlist Link in Header -->
+                    <li class="nav-item">
+                        <a href="wishlist.html" class="nav-link wishlist-link">
+                            <i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" id="header-wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Sports & Outdoors</a></li>
+            <li><a href="repair_services.html">Repair Services</a></li>
+            <li><a href="refurbished_products.html">Refurbished</a></li>
+        </ul>
+    </div>
+</nav>
+    </header>
+
+    <main class="container product-detail-page">
+        <div class="product-breadcrumb">
+            <a href="index.html">Home</a> &gt; <span id="product-category-breadcrumb"></span> &gt; <span id="product-name-breadcrumb"></span>
+        </div>
+
+        <div class="product-main-area">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image" src="" alt="Product Main View">
+                </div>
+                <div id="thumbnail-images-container" class="thumbnail-images">
+                    </div>
+            </div>
+
+            <div class="product-info-area">
+                <h1 id="product-title" class="product-title"></h1>
+                <p class="product-brand">Brand: <span id="product-brand"></span></p>
+                <div class="product-rating-detail">
+                    <div id="product-stars" class="stars">
+                        </div>
+                    <a href="#customer-reviews" class="review-link"><span id="review-count"></span> ratings | <span id="questions-answered"></span> answered questions</a>
+                </div>
+
+                <p class="availability-status" id="stock-status">
+                    </p>
+
+                <hr class="info-divider">
+
+                <div class="product-price-section">
+                    <div class="price-line">
+                        <span class="price-label">Price:</span>
+                        <span id="current-price-lg" class="current-price-lg"></span>
+                    </div>
+                    <div class="price-line">
+                        <span class="price-label">M.R.P.:</span>
+                        <span id="original-price-lg" class="original-price-lg"></span>
+                        <span id="discount-percent-lg" class="discount-percent-lg"></span>
+                    </div>
+                    <p class="tax-info">Inclusive of all taxes</p>
+                </div>
+
+                <hr class="info-divider">
+
+                <div class="product-options">
+                    <div class="option-group" id="size-option-group">
+                        <label for="size">Size:</label>
+                        <select id="size" class="product-select">
+                            </select>
+                    </div>
+                    <div class="option-group" id="color-option-group">
+                        <label for="color">Color:</label>
+                        <select id="color" class="product-select">
+                            </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="product-quantity" value="1" min="1" max="10">
+                    </div>
+                </div>
+
+                <div class="add-to-cart-actions">
+                    <p class="delivery-estimate">
+                        <i class="fas fa-truck"></i> Est. Delivery: <span id="delivery-date" class="delivery-date"></span> if ordered within 2 hrs.
+                    </p>
+                    <button class="btn add-to-cart-btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <!-- NEW: Add to Wishlist button on product detail page -->
+                    <button class="btn add-to-wishlist-btn-lg" data-product-id="" data-selected-options='{}'>
+                        <i class="fas fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+
+                <hr class="info-divider">
+
+                <div class="product-description">
+                    <h2>Product Details</h2>
+                    <p id="product-description-text"></p>
+                    <ul id="product-specs-list">
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <section id="customer-reviews" class="customer-reviews-section">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="review-summary">
+                <h3 id="overall-rating-summary"></h3>
+                <div id="stars-large" class="stars-large">
+                    </div>
+                <p>Based on <span id="total-global-ratings"></span> global ratings</p>
+            </div>
+
+            <div id="review-list-container" class="review-list">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/common.js"></script> <!-- CHANGED from cart.js to common.js -->
+
+    <script>
+    // Function to generate star icons based on rating
+    function generateStars(rating) {
+        let starsHtml = '';
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 !== 0;
+
+        for (let i = 0; i < fullStars; i++) {
+            starsHtml += '<i class="fas fa-star"></i>';
+        }
+        if (hasHalfStar) {
+            starsHtml += '<i class="fas fa-star-half-alt"></i>';
+        }
+        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+        for (let i = 0; i < emptyStars; i++) {
+            starsHtml += '<i class="far fa-star"></i>';
+        }
+        return starsHtml;
+    }
+
+    // Function to load product details
+    function loadProductDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (!productId) {
+            console.error('No product ID provided in URL.');
+            return;
+        }
+
+        const product = productsData.find(p => p.id === productId);
+
+        if (!product) {
+            console.error(`Product with ID "${productId}" not found.`);
+            return;
+        }
+
+        // Update HTML elements with product data
+        document.title = `${product.name} - MyStore`;
+
+        // Breadcrumb
+        document.getElementById('product-category-breadcrumb').textContent = product.category;
+        document.getElementById('product-name-breadcrumb').textContent = product.name;
+
+        // Product Gallery
+        const mainImage = document.getElementById('main-product-image');
+        mainImage.src = product.mainImage;
+        mainImage.alt = product.name + ' - Main View';
+
+        const thumbnailContainer = document.getElementById('thumbnail-images-container');
+        thumbnailContainer.innerHTML = '';
+        product.thumbnails.forEach((thumb, index) => {
+            const img = document.createElement('img');
+            img.src = thumb;
+            img.alt = `${product.name} Thumbnail ${index + 1}`;
+            if (index === 0) {
+                img.classList.add('active');
+            }
+            img.addEventListener('click', () => {
+                mainImage.src = thumb;
+                document.querySelectorAll('.thumbnail-images img').forEach(t => t.classList.remove('active'));
+                img.classList.add('active');
+            });
+            thumbnailContainer.appendChild(img);
+        });
+
+        // Product Info Area
+        document.getElementById('product-title').textContent = product.name;
+        document.getElementById('product-brand').textContent = product.brand;
+
+        const productStars = document.getElementById('product-stars');
+        productStars.innerHTML = generateStars(product.rating) + ` <span>${product.rating} out of 5 stars</span>`;
+
+        document.getElementById('review-count').textContent = product.reviewCount.toLocaleString();
+        document.getElementById('questions-answered').textContent = product.questionsAnswered;
+
+        const stockStatusElement = document.getElementById('stock-status');
+        stockStatusElement.textContent = product.stockStatus === 'In Stock' ? 'In Stock.' : 'Out of Stock.';
+        stockStatusElement.classList.toggle('in-stock', product.stockStatus === 'In Stock');
+        stockStatusElement.classList.toggle('out-of-stock', product.stockStatus !== 'In Stock');
+        stockStatusElement.innerHTML = `<i class="fas fa-check-circle"></i> ${stockStatusElement.textContent} <span class="sold-by">Sold by <a href="#" class="seller-link">MyStore Seller</a> and Fulfilled by MyStore.</span>`;
+
+        document.getElementById('current-price-lg').textContent = product.currentPrice;
+        document.getElementById('original-price-lg').textContent = product.originalPrice;
+        document.getElementById('discount-percent-lg').textContent = `(${product.discount})`;
+        document.getElementById('delivery-date').textContent = product.deliveryEstimate;
+
+        // Product Options (Size and Color/Other)
+        const sizeSelect = document.getElementById('size');
+        const colorSelect = document.getElementById('color');
+        const sizeOptionGroup = document.getElementById('size-option-group');
+        const colorOptionGroup = document.getElementById('color-option-group');
+
+        sizeSelect.innerHTML = '';
+        colorSelect.innerHTML = '';
+
+        if (product.options && product.options.size && product.options.size.length > 0) {
+            sizeOptionGroup.style.display = 'flex';
+            product.options.size.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeSelect.appendChild(option);
+            });
+        } else {
+            sizeOptionGroup.style.display = 'none';
+        }
+
+        let optionTypeForColorSelect = ''; // To store 'color', 'strap', 'dialColor'
+        if (product.options && product.options.color && product.options.color.length > 0) {
+            optionTypeForColorSelect = 'color';
+            colorOptionGroup.querySelector('label').textContent = 'Color:';
+            colorOptionGroup.style.display = 'flex';
+            product.options.color.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+        } else if (product.options && product.options.strap && product.options.strap.length > 0) {
+            optionTypeForColorSelect = 'strap';
+            colorOptionGroup.querySelector('label').textContent = 'Strap:';
+            colorOptionGroup.style.display = 'flex';
+            product.options.strap.forEach(strap => {
+                const option = document.createElement('option');
+                option.value = strap;
+                option.textContent = strap;
+                colorSelect.appendChild(option);
+            });
+        } else if (product.options && product.options.dialColor && product.options.dialColor.length > 0) {
+            optionTypeForColorSelect = 'dialColor';
+            colorOptionGroup.querySelector('label').textContent = 'Dial Color:';
+            colorOptionGroup.style.display = 'flex';
+            product.options.dialColor.forEach(dColor => {
+                const option = document.createElement('option');
+                option.value = dColor;
+                option.textContent = dColor;
+                colorSelect.appendChild(option);
+            });
+        } else {
+            colorOptionGroup.style.display = 'none';
+        }
+        // Set data-option-type attribute on the select element if an option type was found
+        if (optionTypeForColorSelect) {
+            colorSelect.setAttribute('data-option-type', optionTypeForColorSelect);
+        }
+
+
+        // Product Description
+        document.getElementById('product-description-text').textContent = product.description;
+        const specsList = document.getElementById('product-specs-list');
+        specsList.innerHTML = '';
+        product.specs.forEach(spec => {
+            const li = document.createElement('li');
+            li.textContent = spec;
+            specsList.appendChild(li);
+        });
+
+        // Customer Reviews
+        document.getElementById('overall-rating-summary').textContent = `Overall Rating: ${product.rating} out of 5 stars`;
+        document.getElementById('stars-large').innerHTML = generateStars(product.rating);
+        document.getElementById('total-global-ratings').textContent = product.reviewCount.toLocaleString();
+
+        const reviewListContainer = document.getElementById('review-list-container');
+        reviewListContainer.innerHTML = '';
+        product.reviews.forEach(review => {
+            const reviewItem = document.createElement('div');
+            reviewItem.classList.add('review-item');
+            reviewItem.innerHTML = `
+                <p class="review-header">
+                    <span class="review-author">${review.author}</span> on <span class="review-date">${review.date}</span>
+                </p>
+                <div class="review-rating">
+                    ${generateStars(review.stars)}
+                    <span class="review-title">${review.title}</span>
+                </div>
+                <p class="review-text">"${review.text}"</p>
+            `;
+            reviewListContainer.appendChild(reviewItem);
+        });
+
+        // Event listener for the main "Add to Cart" button on product detail page
+        const mainAddToCartBtn = document.querySelector('.add-to-cart-actions .add-to-cart-btn-lg');
+        if (mainAddToCartBtn) {
+            mainAddToCartBtn.addEventListener('click', () => {
+                const quantity = parseInt(document.getElementById('quantity').value);
+                const selectedOptions = {};
+
+                if (sizeSelect && sizeSelect.style.display !== 'none') {
+                    selectedOptions.size = sizeSelect.value;
+                }
+                if (colorSelect && colorSelect.style.display !== 'none' && colorSelect.dataset.optionType) {
+                    selectedOptions[colorSelect.dataset.optionType] = colorSelect.value;
+                }
+                addToCart(product.id, quantity, selectedOptions);
+            });
+        }
+
+        // NEW: Event listener for the "Add to Wishlist" button on product detail page
+        const mainAddToWishlistBtn = document.querySelector('.add-to-cart-actions .add-to-wishlist-btn-lg');
+        if (mainAddToWishlistBtn) {
+            // Set data attributes on the wishlist button
+            mainAddToWishlistBtn.dataset.productId = product.id;
+            // Get currently selected options to store with wishlist item
+            const selectedOptions = {};
+            if (sizeSelect && sizeSelect.style.display !== 'none') {
+                selectedOptions.size = sizeSelect.value;
+            }
+            if (colorSelect && colorSelect.style.display !== 'none' && colorSelect.dataset.optionType) {
+                selectedOptions[colorSelect.dataset.optionType] = colorSelect.value;
+            }
+            mainAddToWishlistBtn.dataset.selectedOptions = JSON.stringify(selectedOptions);
+
+            mainAddToWishlistBtn.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default button action
+                const productId = event.currentTarget.dataset.productId;
+                const options = JSON.parse(event.currentTarget.dataset.selectedOptions || '{}');
+                addToWishlist(productId, options); // Call the function from common.js
+            });
+        }
+    }
+
+    // Load product details when the page content is loaded
+    document.addEventListener('DOMContentLoaded', loadProductDetails);
+
+    </script>
+</body>
+</html>

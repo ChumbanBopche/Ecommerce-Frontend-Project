@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li class="nav-item">
+                        <a href="wishlist.html" class="nav-link wishlist-link">
+                            <i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" id="header-wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cart.html" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                    <li><a href="repair_services.html">Repair Services</a></li>
+                    <li><a href="refurbished_products.html">Refurbished</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container wishlist-page">
+        <h1 class="section-title">Your Wishlist</h1>
+
+        <div id="wishlist-items-container" class="wishlist-items-list">
+            <!-- Wishlist items will be dynamically inserted here by JavaScript -->
+        </div>
+
+        <div class="empty-wishlist-state" id="empty-wishlist-state">
+            <i class="fas fa-heart empty-wishlist-icon"></i>
+            <h2>Your Wishlist is Empty</h2>
+            <p>Save items you love and want to buy later. Start exploring our amazing products!</p>
+            <a href="index.html" class="btn btn-primary continue-shopping-btn">
+                <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/common.js"></script> <!-- Will be your renamed cart.js -->
+    <script>
+        // This script runs specifically for the wishlist.html page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateWishlistCountDisplay(); // Update header wishlist count
+            renderWishlistItems(); // Display items on the wishlist page
+        });
+    </script>
+</body>
+</html>

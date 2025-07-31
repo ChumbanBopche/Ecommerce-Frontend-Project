@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                    <li><a href="#">Luxuries</a></li>
+                    <li><a href="#">Refurnished Products</a></li>
+                    <li><a href="#">Repairing Service</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container checkout-page">
+        <h1 class="section-title">Checkout</h1>
+
+        <div class="checkout-content-wrapper">
+            <div class="checkout-sections">
+                <section class="checkout-section shipping-address">
+                    <h2 class="section-heading">1. Shipping Address</h2>
+                    <form class="address-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressLine1">Address Line 1</label>
+                            <input type="text" id="addressLine1" name="addressLine1" placeholder="Flat, House no., Building, Company, Apartment" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addressLine2">Address Line 2 (Optional)</label>
+                            <input type="text" id="addressLine2" name="addressLine2" placeholder="Area, Street, Sector, Village">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" placeholder="Your City" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State / Province / Region</label>
+                                <input type="text" id="state" name="state" placeholder="Your State" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipCode">Zip / Postal Code</label>
+                                <input type="text" id="zipCode" name="zipCode" placeholder="123456" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" name="country" required>
+                                    <option value="India">India</option>
+                                    <option value="USA">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="Australia">Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+91 9876543210" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary save-address-btn">Save Address & Continue</button>
+                    </form>
+                </section>
+
+                <hr class="checkout-divider">
+
+                <section class="checkout-section payment-method">
+                    <h2 class="section-heading">2. Payment Method</h2>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="paymentMethod" value="card" checked>
+                            <label for="card"><i class="fas fa-credit-card"></i> Credit / Debit Card</label>
+                            <div class="payment-details-form card-form">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" placeholder="John Doe">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="text" id="expiryDate" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" placeholder="XXX">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="upi" name="paymentMethod" value="upi">
+                            <label for="upi"><i class="fas fa-qrcode"></i> UPI / Net Banking</label>
+                            <div class="payment-details-form upi-form" style="display: none;">
+                                <p>You will be redirected to a secure payment gateway.</p>
+                                <div class="form-group">
+                                    <label for="upiId">Enter UPI ID (Optional)</label>
+                                    <input type="text" id="upiId" placeholder="yourname@bankupi">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="cod" name="paymentMethod" value="cod">
+                            <label for="cod"><i class="fas fa-money-bill-wave"></i> Cash on Delivery</label>
+                            <div class="payment-details-form cod-form" style="display: none;">
+                                <p>Pay with cash when your order is delivered to your doorstep.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="checkout-divider">
+
+                <section class="checkout-section review-items">
+                    <h2 class="section-heading">3. Review Items & Shipping</h2>
+                    <div class="order-items-preview">
+                        <div class="order-item-card">
+                            <img src="static/images/tshirt.jpg" alt="Classic Comfort T-Shirt">
+                            <div class="item-info">
+                                <p class="item-name">Classic Comfort T-Shirt for Men</p>
+                                <p class="item-qty">Qty: 1</p>
+                            </div>
+                            <p class="item-price">$25.00</p>
+                        </div>
+                        <div class="order-item-card">
+                            <img src="static/images/jeans.jpg" alt="Premium Slim-Fit Jeans">
+                            <div class="item-info">
+                                <p class="item-name">Premium Slim-Fit Jeans</p>
+                                <p class="item-qty">Qty: 1</p>
+                            </div>
+                            <p class="item-price">$50.00</p>
+                        </div>
+                        <div class="order-item-card">
+                            <img src="static/images/hoodie.jpg" alt="Super Soft Everyday Hoodie">
+                            <div class="item-info">
+                                <p class="item-name">Super Soft Everyday Hoodie</p>
+                                <p class="item-qty">Qty: 1</p>
+                            </div>
+                            <p class="item-price">$40.00</p>
+                        </div>
+                    </div>
+                    <p class="shipping-method-info"><i class="fas fa-truck"></i> Standard Shipping: FREE</p>
+                </section>
+            </div>
+
+            <div class="order-summary-card">
+                <a href="order_confirmation.html" class="btn btn-primary place-order-btn">
+                <i class="fas fa-lock"></i> Place Your Order
+                </a>
+            <p class="order-summary-disclaimer">
+                By placing your order, you agree to MyStore's <a href="#">privacy notice</a> and <a href="#">conditions of use</a>.
+            </p>
+                <hr class="summary-divider">
+                <h3 class="summary-heading">Order Summary</h3>
+                <div class="summary-line">
+                    <span>Items:</span>
+                    <span>$115.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Shipping & Handling:</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Order Total:</span>
+                    <span class="total-amount">$115.00</span>
+                </div>
+                <div class="summary-line savings-line">
+                    <span>You saved:</span>
+                    <span>$0.00</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JS for toggling payment method forms (for demo purposes)
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentOptions = document.querySelectorAll('input[name="paymentMethod"]');
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    document.querySelectorAll('.payment-details-form').forEach(form => {
+                        form.style.display = 'none';
+                    });
+                    const selectedForm = document.querySelector(`.${this.value}-form`);
+                    if (selectedForm) {
+                        selectedForm.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

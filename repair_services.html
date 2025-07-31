@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repairing Services - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        /* Specific styles for the Repair Services page */
+        .repair-service-section {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .repair-service-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .repair-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .service-description, .inquiry-form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px; /* Ensure responsiveness */
+            max-width: 600px;
+        }
+
+        .service-description h3 {
+            color: #555;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .service-description p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .service-description ul {
+            list-style: disc inside;
+            color: #666;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .service-description ul li {
+            margin-bottom: 8px;
+        }
+
+        .inquiry-form-container h3 {
+            color: #555;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .inquiry-form .form-group {
+            margin-bottom: 18px;
+        }
+
+        .inquiry-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .inquiry-form input[type="text"],
+        .inquiry-form input[type="email"],
+        .inquiry-form input[type="tel"],
+        .inquiry-form textarea,
+        .inquiry-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #333;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .inquiry-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .inquiry-form input[type="text"]:focus,
+        .inquiry-form input[type="email"]:focus,
+        .inquiry-form input[type="tel"]:focus,
+        .inquiry-form textarea:focus,
+        .inquiry-form select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+        }
+
+        .inquiry-form .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .inquiry-form .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .repair-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service-description, .inquiry-form-container {
+                max-width: 90%; /* Adjust for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li class="nav-item">
+                        <a href="wishlist.html" class="nav-link wishlist-link">
+                            <i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" id="header-wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cart.html" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+       <nav class="main-categories-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Sports & Outdoors</a></li>
+            <li><a href="repair_services.html">Repair Services</a></li>
+            <li><a href="refurbished_products.html">Refurbished</a></li>
+        </ul>
+    </div>
+</nav>
+    </header>
+
+    <main class="container">
+        <section class="repair-service-section">
+            <h2>Professional Repairing Services</h2>
+            <div class="repair-content">
+                <div class="service-description">
+                    <h3>Fast & Reliable Repairs for Your Electronics & Appliances</h3>
+                    <p>At MyStore, we understand how essential your electronics and home appliances are to your daily life. Our expert technicians are here to provide top-notch repair services, ensuring your devices are back in perfect working order quickly and efficiently.</p>
+                    <p>We offer repairs for a wide range of products, including:</p>
+                    <ul>
+                        <li>Smartphones & Tablets</li>
+                        <li>Laptops & Desktops</li>
+                        <li>Televisions & Audio Systems</li>
+                        <li>Refrigerators & Washing Machines</li>
+                        <li>Microwave Ovens & Other Kitchen Appliances</li>
+                        <li>And much more!</li>
+                    </ul>
+                    <p>Our service includes genuine parts, a comprehensive diagnostic, and a warranty on all repairs. Get a free quote today!</p>
+                </div>
+                <div class="inquiry-form-container">
+                    <h3>Request a Repair Quote</h3>
+                    <form class="inquiry-form" id="repair-inquiry-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceType">Type of Device/Appliance</label>
+                            <select id="deviceType" name="deviceType" required>
+                                <option value="">Select Device Type</option>
+                                <option value="smartphone">Smartphone</option>
+                                <option value="laptop">Laptop</option>
+                                <option value="tv">Television</option>
+                                <option value="refrigerator">Refrigerator</option>
+                                <option value="washing_machine">Washing Machine</option>
+                                <option value="microwave">Microwave Oven</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="issueDescription">Describe the Issue</label>
+                            <textarea id="issueDescription" name="issueDescription" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="repair_services.html">Repair Services</a></li> <!-- NEW: Link to Repair Services -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/common.js"></script>
+    <script>
+        // Initialize header counts on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCountDisplay();
+            updateWishlistCountDisplay();
+
+            // Handle form submission (for demo purposes, just an alert)
+            const repairForm = document.getElementById('repair-inquiry-form');
+            if (repairForm) {
+                repairForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent actual form submission
+                    alert('Repair inquiry submitted successfully! We will contact you shortly.');
+                    repairForm.reset(); // Clear the form
+                });
+            }
+        });
+    </script>
+</body>
+</html>

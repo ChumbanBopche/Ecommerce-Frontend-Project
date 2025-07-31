@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed! - MyStore</title>
+    <!-- Google Fonts: Roboto for clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                    <li><a href="#">Luxuries</a></li>
+                    <li><a href="#">Refurnished Products</a></li>
+                    <li><a href="#">Repairing Service</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container order-confirmation-page">
+        <div class="confirmation-card">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1 class="confirmation-title">Thank You for Your Order!</h1>
+            <p class="confirmation-message">Your order has been placed successfully and is being processed. You will receive an email confirmation shortly with details of your purchase.</p>
+            
+            <div class="order-details-summary">
+                <div class="detail-row">
+                    <span class="detail-label">Order ID:</span>
+                    <span class="detail-value">#MYST-2025-ABCD-12345</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Order Date:</span>
+                    <span class="detail-value">July 13, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Total Amount:</span>
+                    <span class="detail-value total-amount">$115.00</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Payment Method:</span>
+                    <span class="detail-value">Credit Card (Simulated)</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Delivery To:</span>
+                    <span class="detail-value">John Doe, 123 Main St, Anytown, 12345</span>
+                </div>
+            </div>
+
+            <div class="next-steps-section">
+                <h2>What's Next?</h2>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Check your email for order confirmation and tracking details.</li>
+                    <li><i class="fas fa-box"></i> Your order will be shipped within 1-2 business days.</li>
+                    <li><i class="fas fa-question-circle"></i> Have questions? Visit our <a href="#" class="link-text">Help Center</a>.</li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="btn btn-primary continue-shopping-btn-conf">
+                <i class="fas fa-shopping-bag"></i> Continue Shopping
+            </a>
+            <a href="#" class="btn btn-secondary view-orders-btn-conf">
+                <i class="fas fa-list-alt"></i> View Your Orders
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refurbished Products - MyStore</title> <!-- CHANGED TITLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <style>
+        /* Specific styles for Refurbished Products page */
+        .refurbished-listing-section { /* CHANGED CLASS NAME */
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+
+        .refurbished-listing-section h2 { /* CHANGED CLASS NAME */
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .refurbished-grid { /* CHANGED CLASS NAME */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .refurbished-card { /* CHANGED CLASS NAME */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+        }
+
+        .refurbished-card:hover { /* CHANGED CLASS NAME */
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .refurbished-card-link { /* CHANGED CLASS NAME */
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .refurbished-card-image { /* CHANGED CLASS NAME */
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e8e8e8;
+        }
+
+        .refurbished-card-image img { /* CHANGED CLASS NAME */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .refurbished-card-info { /* CHANGED CLASS NAME */
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .refurbished-title { /* CHANGED CLASS NAME */
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .refurbished-condition { /* CHANGED CLASS NAME */
+            font-size: 0.9em;
+            color: #007bff;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .refurbished-price { /* CHANGED CLASS NAME */
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #28a745;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+
+        .refurbished-card-actions { /* CHANGED CLASS NAME */
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .refurbished-card-actions .btn { /* CHANGED CLASS NAME */
+            flex: 1;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .refurbished-card-actions .btn.add-to-cart-btn { /* CHANGED CLASS NAME */
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+        }
+
+        .refurbished-card-actions .btn.add-to-cart-btn:hover { /* CHANGED CLASS NAME */
+            background-color: #e0a800;
+        }
+
+        .refurbished-card-actions .btn.view-details-btn { /* CHANGED CLASS NAME */
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .refurbished-card-actions .btn.view-details-btn:hover { /* CHANGED CLASS NAME */
+            background-color: #0056b3;
+        }
+
+        /* Empty state for refurbished products */
+        .empty-refurbished-state { /* CHANGED CLASS NAME */
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .empty-refurbished-state .empty-icon { /* CHANGED CLASS NAME */
+            font-size: 4em;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .empty-refurbished-state h2 { /* CHANGED CLASS NAME */
+            font-size: 1.8em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .empty-refurbished-state p { /* CHANGED CLASS NAME */
+            color: #777;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .refurbished-grid { /* CHANGED CLASS NAME */
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li class="nav-item">
+                        <a href="wishlist.html" class="nav-link wishlist-link">
+                            <i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" id="header-wishlist-count">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cart.html" class="nav-link cart-link">
+                            <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                    <li><a href="repair_services.html">Repair Services</a></li>
+                    <li><a href="refurbished_products.html">Refurbished</a></li> <!-- CHANGED LINK TEXT AND TARGET -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="refurbished-listing-section"> <!-- CHANGED CLASS NAME -->
+            <h2>Discover Great Deals on Refurbished Products</h2> <!-- CHANGED HEADING -->
+            <div id="refurbished-products-grid" class="refurbished-grid"> <!-- CHANGED ID AND CLASS NAME -->
+                <!-- Refurbished product cards will be dynamically inserted here -->
+            </div>
+
+            <div class="empty-refurbished-state" id="empty-refurbished-state"> <!-- CHANGED ID AND CLASS NAME -->
+                <i class="fas fa-box-open empty-icon"></i>
+                <h2>No Refurbished Products Available Yet</h2> <!-- CHANGED HEADING -->
+                <p>Check back later for amazing deals on restored items!</p> <!-- CHANGED TEXT -->
+                <a href="index.html" class="btn btn-primary continue-shopping-btn">
+                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="repair_services.html">Repair Services</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/refurbishedProductsData.js"></script> <!-- CHANGED SCRIPT LINK -->
+    <script src="static/js/common.js"></script>
+
+    <script>
+        // Function to render refurbished products
+        function renderRefurbishedProducts() { // CHANGED FUNCTION NAME
+            const container = document.getElementById('refurbished-products-grid'); // CHANGED ID
+            const emptyState = document.getElementById('empty-refurbished-state'); // CHANGED ID
+
+            if (!container || !emptyState) {
+                console.error('Refurbished product container or empty state not found!');
+                return;
+            }
+
+            container.innerHTML = '';
+
+            if (!refurbishedProductsData || refurbishedProductsData.length === 0) { // CHANGED VARIABLE NAME
+                emptyState.style.display = 'flex';
+                container.style.display = 'none';
+                return;
+            } else {
+                emptyState.style.display = 'none';
+                container.style.display = 'grid';
+            }
+
+            refurbishedProductsData.forEach(product => { // CHANGED VARIABLE NAME
+                const productCardHtml = `
+                    <div class="refurbished-card"> <!-- CHANGED CLASS NAME -->
+                        <a href="product_detail.html?id=${product.id}" class="refurbished-card-link"> <!-- CHANGED CLASS NAME -->
+                            <div class="refurbished-card-image"> <!-- CHANGED CLASS NAME -->
+                                <img src="${product.image}" alt="${product.name}">
+                            </div>
+                            <div class="refurbished-card-info"> <!-- CHANGED CLASS NAME -->
+                                <h3 class="refurbished-title">${product.name}</h3> <!-- CHANGED CLASS NAME -->
+                                <p class="refurbished-condition">Condition: ${product.condition}</p> <!-- CHANGED CLASS NAME -->
+                                <p class="refurbished-price">₹ ${product.price.toLocaleString('en-IN')}</p> <!-- CHANGED CLASS NAME -->
+                            </div>
+                        </a>
+                        <div class="refurbished-card-actions"> <!-- CHANGED CLASS NAME -->
+                            <button class="btn add-to-cart-btn" data-product-id="${product.id}" data-is-refurbished="true">Add to Cart</button> <!-- ADDED data-is-refurbished -->
+                            <a href="product_detail.html?id=${product.id}" class="btn view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', productCardHtml);
+            });
+
+            // Attach event listeners for Add to Cart buttons on this page
+            document.querySelectorAll('.refurbished-card-actions .add-to-cart-btn').forEach(button => { // CHANGED CLASS NAME
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const productId = event.currentTarget.dataset.productId;
+                    // For refurbished items, we might not have options, so pass empty object
+                    addToCart(productId, 1, {});
+                });
+            });
+        }
+
+        // Initialize header counts and render refurbished products on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCountDisplay();
+            updateWishlistCountDisplay();
+            renderRefurbishedProducts(); // CHANGED FUNCTION NAME
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Sports & Outdoors</a></li>
+            <li><a href="repair_services.html">Repair Services</a></li>
+            <li><a href="refurbished_products.html">Refurbished</a></li>
+        </ul>
+    </div>
+</nav>
+    </header>
+
+    <main class="container cart-page">
+        <h1 class="section-title">Your Shopping Cart</h1>
+
+        <div class="cart-content-wrapper">
+            <!-- This is where JavaScript will dynamically insert the cart items -->
+            <div id="cart-items-container" class="cart-items-list">
+                <!-- Cart items will be dynamically inserted here by JavaScript -->
+            </div>
+
+            <!-- Mobile Subtotal Summary (initially hidden if empty cart) -->
+            <div class="cart-subtotal-summary-mobile">
+                <p>Subtotal (<span id="mobile-item-count">0</span> items): <span id="mobile-total-amount">₹ 0</span></p>
+                <a href="checkout.html" class="btn btn-primary proceed-to-checkout-btn-mobile">Proceed to Checkout</a>
+            </div>
+
+            <div class="continue-shopping-footer">
+                <a href="index.html" class="btn btn-secondary continue-shopping-btn-main">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+        
+        <!-- Desktop Cart Summary Card (initially hidden if empty cart) -->
+        <div class="cart-summary-card">
+            <p class="cart-summary-message">
+                Your order is eligible for FREE Delivery.
+                <a href="#" class="details-link">Details</a>
+            </p>
+            <p class="cart-subtotal">
+                Subtotal (<span id="desktop-item-count">0</span> items): <span id="desktop-total-amount">₹ 0</span>
+            </p>
+            <a href="checkout.html" class="btn btn-primary proceed-to-checkout-btn">Proceed to Checkout</a>
+        </div> 
+        
+        <!-- Empty Cart State (initially visible if cart is empty) -->
+        <div class="empty-cart-state" id="empty-cart-state">
+            <i class="fas fa-shopping-cart empty-cart-icon"></i>
+            <h2>Your Shopping Cart is Empty</h2>
+            <p>Looks like you haven't added anything to your cart yet. Start exploring our amazing deals!</p>
+            <a href="index.html" class="btn btn-primary continue-shopping-btn">
+                <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMPORTANT: Link productsData.js and cart.js here -->
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/common.js"></script>
+</body>
+</html>

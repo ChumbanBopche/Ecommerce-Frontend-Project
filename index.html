@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore - Professional E-commerce Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+            <ul>
+                <li><a href="login.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                <!-- NEW: Wishlist Link in Header -->
+                <li class="nav-item">
+                    <a href="wishlist.html" class="nav-link wishlist-link">
+                        <i class="fas fa-heart"></i> Wishlist <span class="wishlist-count" id="header-wishlist-count">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link cart-link">
+                        <i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="header-cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+        <nav class="main-categories-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Sports & Outdoors</a></li>
+            <li><a href="repair_services.html">Repair Services</a></li>
+            <li><a href="refurbished_products.html">Refurbished</a></li>
+        </ul>
+    </div>
+</nav>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Unlock Amazing Deals <br> Every Single Day!</h1>
+                <p>Shop smarter, live better. Find everything you need right here.</p>
+                <a href="#featured-products" class="btn btn-primary hero-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="featured-products" class="product-listing-section">
+            <h2 class="section-title">Deals of the Day</h2>
+            <div class="product-grid">
+                <div class="product-card">
+    <a href="product_detail.html?id=tshirt" class="product-card-link">
+        <div class="product-card-image">
+            <img src="static/images/tshirt.jpg" alt="Classic Comfort T-Shirt">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-title">Classic Comfort T-Shirt</h3>
+            <p class="product-category">Men's Apparel</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
+            </div>
+            <div class="product-price">
+                <span class="current-price">₹ 799</span>
+                <span class="original-price">₹ 1,099</span>
+                <span class="discount">28% Off</span>
+            </div>
+        </div>
+    </a>
+    <div class="product-card-actions">
+        <button class="btn add-to-cart-btn" data-product-id="tshirt">Add to Cart</button>
+        <!-- NEW: Add to Wishlist button -->
+        <button class="btn add-to-wishlist-btn" data-product-id="tshirt"><i class="fas fa-heart"></i></button>
+    </div>
+</div>
+
+<div class="product-card">
+    <a href="product_detail.html?id=jeans" class="product-card-link">
+        <div class="product-card-image">
+            <img src="static/images/jeans.jpg" alt="Premium Slim-Fit Jeans">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-title">Premium Slim-Fit Jeans</h3>
+            <p class="product-category">Women's Fashion</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.0)
+            </div>
+            <div class="product-price">
+                <span class="current-price">₹ 1,999</span>
+                <span class="original-price">₹ 2,799</span>
+                <span class="discount">28% Off</span>
+            </div>
+        </div>
+    </a>
+    <div class="product-card-actions">
+        <button class="btn add-to-cart-btn" data-product-id="jeans">Add to Cart</button>
+        <!-- NEW: Add to Wishlist button -->
+        <button class="btn add-to-wishlist-btn" data-product-id="jeans"><i class="fas fa-heart"></i></button>
+    </div>
+</div>
+
+<div class="product-card">
+    <a href="product_detail.html?id=hoodie" class="product-card-link">
+        <div class="product-card-image">
+            <img src="static/images/hoodie.jpg" alt="Super Soft Everyday Hoodie">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-title">Super Soft Everyday Hoodie</h3>
+            <p class="product-category">Unisex Wear</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
+            </div>
+            <div class="product-price">
+                <span class="current-price">₹ 1,499</span>
+                <span class="original-price">₹ 2,000</span>
+                <span class="discount">25% Off</span>
+            </div>
+        </div>
+    </a>
+    <div class="product-card-actions">
+        <button class="btn add-to-cart-btn" data-product-id="hoodie">Add to Cart</button>
+        <!-- NEW: Add to Wishlist button -->
+        <button class="btn add-to-wishlist-btn" data-product-id="hoodie"><i class="fas fa-heart"></i></button>
+    </div>
+</div>
+
+<div class="product-card">
+    <a href="product_detail.html?id=sneakers" class="product-card-link">
+        <div class="product-card-image">
+            <img src="static/images/sneakers.jpg" alt="Dynamic Performance Sneakers">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-title">Dynamic Performance Sneakers</h3>
+            <p class="product-category">Footwear</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> (3.5)
+            </div>
+            <div class="product-price">
+                <span class="current-price">₹ 2,999</span>
+                <span class="original-price">₹ 3,999</span>
+                <span class="discount">25% Off</span>
+            </div>
+        </div>
+    </a>
+    <div class="product-card-actions">
+        <button class="btn add-to-cart-btn" data-product-id="sneakers">Add to Cart</button>
+        <!-- NEW: Add to Wishlist button -->
+        <button class="btn add-to-wishlist-btn" data-product-id="sneakers"><i class="fas fa-heart"></i></button>
+    </div>
+</div>
+
+<div class="product-card">
+    <a href="product_detail.html?id=watch" class="product-card-link">
+        <div class="product-card-image">
+            <img src="static/images/watch.jpg" alt="Luxury Chronograph Watch">
+        </div>
+        <div class="product-card-info">
+            <h3 class="product-title">Luxury Chronograph Watch</h3>
+            <p class="product-category">Accessories</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
+            </div>
+            <div class="product-price">
+                <span class="current-price">₹ 8,999</span>
+                <span class="original-price">₹ 12,000</span>
+                <span class="discount">25% Off</span>
+            </div>
+        </div>
+    </a>
+    <div class="product-card-actions">
+        <button class="btn add-to-cart-btn" data-product-id="watch">Add to Cart</button>
+        <!-- NEW: Add to Wishlist button -->
+        <button class="btn add-to-wishlist-btn" data-product-id="watch"><i class="fas fa-heart"></i></button>
+    </div>
+</div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved. (Demo purposes only)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/productsData.js"></script>
+    <script src="static/js/common.js"></script> <!-- CHANGED from cart.js to common.js -->
+    <script src="static/js/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.product-card .add-to-cart-btn');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const productId = event.currentTarget.dataset.productId;
+                    addToCart(productId);
+                });
+            });
+
+            // NEW: Event listeners for Add to Wishlist buttons on index.html
+            const addToWishlistButtons = document.querySelectorAll('.product-card .add-to-wishlist-btn');
+            addToWishlistButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const productId = event.currentTarget.dataset.productId;
+                    addToWishlist(productId); // Call the function from common.js
+                });
+            });
+        });
+    </script>
+</body>
+</html>

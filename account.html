@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - MyStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="site-logo">MyStore</a>
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products, brands and more...">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="account.html" class="nav-link"><i class="fas fa-user"></i> Account</a></li>
+                    <li><a href="cart.html" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="main-categories-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                    <li><a href="#">Luxuries</a></li>
+                    <li><a href="#">Refurnished Products</a></li>
+                    <li><a href="#">Repairing Service</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container account-page">
+        <h1 class="section-title">My Account</h1>
+
+        <div class="account-dashboard">
+            <div class="welcome-banner">
+                <i class="fas fa-hand-sparkles"></i>
+                <h2>Welcome back, John Doe!</h2>
+                <p>Manage your orders, profile, and preferences here.</p>
+            </div>
+
+            <div class="account-sections-grid">
+                <div class="account-card">
+                    <i class="fas fa-list-alt"></i>
+                    <h3>My Orders</h3>
+                    <p>Track, return, or buy things again.</p>
+                    <a href="#" class="btn btn-link">View Orders</a>
+                </div>
+                <div class="account-card">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Login & Security</h3>
+                    <p>Edit login, name, and mobile number.</p>
+                    <a href="#" class="btn btn-link">Edit Profile</a>
+                </div>
+                <div class="account-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Your Addresses</h3>
+                    <p>Edit addresses for orders and gifts.</p>
+                    <a href="#" class="btn btn-link">Manage Addresses</a>
+                </div>
+                <div class="account-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Payment Options</h3>
+                    <p>Manage payment methods and settings.</p>
+                    <a href="#" class="btn btn-link">Manage Payments</a>
+                </div>
+                <div class="account-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>My Wishlist</h3>
+                    <p>Manage your saved items.</p>
+                    <a href="#" class="btn btn-link">Go to Wishlist</a>
+                </div>
+                <div class="account-card">
+                    <i class="fas fa-box-open"></i>
+                    <h3>My Returns</h3>
+                    <p>View return status and history.</p>
+                    <a href="#" class="btn btn-link">Track Returns</a>
+                </div>
+            </div>
+
+            <div class="logout-section">
+                <p>Not John Doe?</p>
+                <a href="login.html" class="btn btn-secondary logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">MyStore Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Shop With Us</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Your Wishlist</a></li>
+                    <li><a href="#">MyStore Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money With Us</h3>
+                <ul>
+                    <li><a href="#">Sell on MyStore</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">COVID-19 and MyStore</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 MyStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
